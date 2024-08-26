@@ -33,7 +33,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextNome"
         android:layout_width="345dp"
         android:layout_height="42dp"
         android:layout_marginTop="300dp"
@@ -54,11 +54,13 @@
         android:backgroundTint="#499D8F"
         android:text="Iniciar Quiz"
         android:textSize="20sp"
+        android:enabled="false"
         app:cornerRadius="14px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNome"
         app:layout_constraintVertical_bias="0.058" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -91,13 +93,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="152dp"
         android:text="[RGM DO ALUNO"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnResponder"
         android:layout_width="164dp"
         android:layout_height="80dp"
         android:text="Sair"
@@ -107,7 +109,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.312"
         app:layout_constraintStart_toEndOf="@+id/btnIniciarQuiz"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNome"
         app:layout_constraintVertical_bias="0.058" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
