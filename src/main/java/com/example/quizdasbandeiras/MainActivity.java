@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSair;
     private EditText editTextNome;
     private String username;
+    private String inputUsername = "";
     private int pontos;
 
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnIniciarQuiz.setOnClickListener(this::iniciar);
 
+
         // TextWatcher é uma classe que oferece métodos para quando o texto é modificado em editText
         editTextNome.addTextChangedListener(new TextWatcher() {
             @Override
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 String input = editable.toString();
+                inputUsername = input;
                 btnIniciarQuiz.setEnabled(!input.trim().isEmpty());
             }
         });
@@ -72,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Declarando uma variável do tipo intent
         Intent it = new Intent(getApplicationContext(), Exercicio1.class);
+
+        // Put the text as an extra
+        it.putExtra("text_key", inputUsername);
+
         // Iniciando a tela desejada
         startActivity(it);
 

@@ -9,7 +9,7 @@ import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Exercicio2 extends AppCompatActivity {
+public class Exercicio8 extends AppCompatActivity {
 
     private Button btnResponder;
 
@@ -18,9 +18,7 @@ public class Exercicio2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_exercicio2);
-
-        MainActivity mainActivity = new MainActivity();
+        setContentView(R.layout.activity_exercicio8);
 
         btnResponder = findViewById(R.id.btnResponder);
         btnResponder.setOnClickListener(this::responder);
@@ -28,7 +26,7 @@ public class Exercicio2 extends AppCompatActivity {
 
     private void responder (View v) {
         // Declarando uma variável do tipo intent
-        Intent it = new Intent(getApplicationContext(), Exercicio3.class);
+        Intent it = new Intent(getApplicationContext(), Exercicio9.class);
         // Iniciando a tela desejada
         startActivity(it);
     }

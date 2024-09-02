@@ -1,19 +1,17 @@
 package com.example.quizdasbandeiras;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Exercicio1 extends AppCompatActivity {
-
-//    private TextView tv;
+    private Button btnResponder;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -22,16 +20,17 @@ public class Exercicio1 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_exercicio1);
 
-//        tv = findViewById(R.id.tv);
-
+        btnResponder = findViewById(R.id.btnResponder);
+        btnResponder.setOnClickListener(this::responder);
 
         MainActivity mainActivity = new MainActivity();
-//        tv.setText(mainActivity.getName());
-
-
-
     }
 
-
+    private void responder (View v) {
+        // Declarando uma variável do tipo intent
+        Intent it = new Intent(getApplicationContext(), ScoreScreen.class);
+        // Iniciando a tela desejada
+        startActivity(it);
+    }
 }
 
