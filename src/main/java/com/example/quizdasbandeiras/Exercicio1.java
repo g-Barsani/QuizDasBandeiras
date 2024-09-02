@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Exercicio1 extends AppCompatActivity {
     private Button btnResponder;
     private RadioButton radioButtonAnswer;
+    private RadioGroup radioGroup;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -23,6 +26,7 @@ public class Exercicio1 extends AppCompatActivity {
         setContentView(R.layout.activity_exercicio1);
 
         btnResponder = findViewById(R.id.btnResponder);
+        radioGroup = findViewById(R.id.radioGroup);
         radioButtonAnswer = findViewById(R.id.radioButtonAnswer);
 
         btnResponder.setOnClickListener(this::responder);
@@ -31,16 +35,28 @@ public class Exercicio1 extends AppCompatActivity {
     }
 
     private void responder (View v) {
-        // Declarando uma variável do tipo intent
-//        Intent it = new Intent(getApplicationContext(), ScoreScreen.class);
-        if (radioButtonAnswer.isChecked()) {
-            ScoreManager.getInstance().addPoints(1);
+        // Get the ID of the checked RadioButton
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+
+        // Check if any RadioButton is checked
+        if (selectedId != -1) {
+            // A RadioButton is checked
+            // Declarando uma variável do tipo intent
+            if (radioButtonAnswer.isChecked()) {
+                ScoreManager.getInstance().addPoints(1);
+            }
+
+
+            Intent it = new Intent(getApplicationContext(), Exercicio2.class);
+            // Iniciando a tela desejada
+            startActivity(it);
+
+        } else {
+            // No RadioButton is checked
+            Toast.makeText(this, "Selecione uma resposta", Toast.LENGTH_SHORT).show();
         }
 
 
-        Intent it = new Intent(getApplicationContext(), Exercicio2.class);
-        // Iniciando a tela desejada
-        startActivity(it);
     }
 }
 
