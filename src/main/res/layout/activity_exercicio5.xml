@@ -67,7 +67,7 @@
             android:text="Guatemala" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButtonAnswer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Brasil" />

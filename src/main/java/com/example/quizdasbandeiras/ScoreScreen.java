@@ -14,6 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class ScoreScreen extends AppCompatActivity {
 
     private String receivedUsername;
+    private TextView textViewScore;
+    private TextView textViewUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,20 +23,14 @@ public class ScoreScreen extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_score_screen);
 
-//        Button btnResponder = findViewById(R.id.btnResponder);
+        textViewUsername = findViewById(R.id.textViewUsername);
+        textViewScore = findViewById(R.id.textViewScore);
 
+        String score = String.valueOf(ScoreManager.getInstance().getScore());
+        String username = UserManager.getInstance().getUserName();
 
-
-
-        // Retrieve the username from the Intent
-//        Intent intent = getIntent();
-//        receivedUsername = intent.getStringExtra("text_key");
-//
-//        TextView textViewUsername = findViewById(R.id.textViewUsername);
-//        textViewUsername.setText(receivedUsername);
-
-
-
+        textViewUsername.setText(username);
+        textViewScore.setText(score);
 
     }
 }

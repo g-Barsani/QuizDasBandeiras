@@ -18,7 +18,7 @@ public class Exercicio4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_exercicio1);
+        setContentView(R.layout.activity_exercicio4);
 
         btnResponder = findViewById(R.id.btnResponder);
         btnResponder.setOnClickListener(this::responder);

@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,9 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnIniciarQuiz;
     private Button btnSair;
     private EditText editTextNome;
-    private String username;
+    //    private String username;
     private String inputUsername = "";
-    private int pontos;
 
 
     @Override
@@ -62,30 +62,22 @@ public class MainActivity extends AppCompatActivity {
                 btnIniciarQuiz.setEnabled(!input.trim().isEmpty());
             }
         });
-
-
-
     }
 
 
-
     private void iniciar(View v) {
-        username = editTextNome.toString();
+        inputUsername = editTextNome.getText().toString();
+        Toast.makeText(this, inputUsername, Toast.LENGTH_SHORT).show();
+        UserManager.getInstance().setUserName(inputUsername);
 
 
         // Declarando uma variável do tipo intent
         Intent it = new Intent(getApplicationContext(), Exercicio1.class);
 
-        // Put the text as an extra
-        it.putExtra("text_key", inputUsername);
-
         // Iniciando a tela desejada
         startActivity(it);
 
     }
-
-    public String getName() {
-        return username;
-    }
 }
+
 
